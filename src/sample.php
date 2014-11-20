@@ -2,6 +2,7 @@
 
 include_once('../vendor/autoload.php');
 use DI\ContainerBuilder;
+use Html\Form;
 
 /**
  * Created by PhpStorm.
@@ -14,5 +15,7 @@ use DI\ContainerBuilder;
 
 $container = ContainerBuilder::buildDevContainer();
 
-#$foo = $container->get('Connection\Http');
-//$form = Form::get($foo->get('http://www.supercarros.com/'), ['id' => 'advanceSearch']);
+$foo = $container->get('Connection\Http');
+$form = Form::get($foo->get('http://www.supercarros.com/'), ['id' => 'advanceSearch']);
+
+print_r($form);
