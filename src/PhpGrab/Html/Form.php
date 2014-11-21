@@ -1,7 +1,7 @@
 <?php
-namespace Html;
+namespace PhpGrab\Html;
 
-#use Base\Container;
+use DOMDocument;
 
 /**
  * HTML forms extractor/submitter

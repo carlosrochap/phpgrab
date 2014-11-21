@@ -1,21 +1,23 @@
 <?php
 
 include_once('../vendor/autoload.php');
-use DI\ContainerBuilder;
-use Html\Form;
+//use di\Containerbuilder;
+//use html\Form;
 
 /**
- * Created by PhpStorm.
- * User: crocha
- * Date: 11/19/14
- * Time: 5:18 PM
+ * created by phpstorm.
+ * user: crocha
+ * date: 11/19/14
+ * time: 5:18 pm
  */
 
 
 
-$container = ContainerBuilder::buildDevContainer();
+$container = DI\containerbuilder::builddevcontainer();
 
-$foo = $container->get('Connection\Http');
-$form = Form::get($foo->get('http://www.supercarros.com/'), ['id' => 'advanceSearch']);
+$foo = $container->get('PhpGrab\Base\PhpGrab');
+$form = $foo->getform('http://www.supercarros.com/');
+//$form = $foo->get('http://www.supercarros.com/');
+//, ['id' => 'advancesearch'];
 
 print_r($form);
