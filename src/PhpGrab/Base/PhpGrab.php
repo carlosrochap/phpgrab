@@ -6,10 +6,10 @@
  * Time: 4:21 PM
  */
 
-namespace PhpGrab\Base;
+#namespace PhpGrab\Base;
 
-use PhpGrab\Connection\Http;
-use PhpGrab\Html\Form;
+#use PhpGrab\Connection\Http;
+#use PhpGrab\Html\Form;
 
 class PhpGrab {
 

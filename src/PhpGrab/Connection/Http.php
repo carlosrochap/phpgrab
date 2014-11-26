@@ -1,5 +1,5 @@
 <?php
-namespace PhpGrab\Connection;
+#namespace PhpGrab\Connection;
 
 class Http {
 

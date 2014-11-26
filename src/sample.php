@@ -14,10 +14,11 @@ include_once('../vendor/autoload.php');
 
 
 $container = DI\containerbuilder::builddevcontainer();
-
-$foo = $container->get('PhpGrab\Base\PhpGrab');
-$form = $foo->getform('http://www.supercarros.com/');
-//$form = $foo->get('http://www.supercarros.com/');
+//new PhpGrab(new Http(), new Form());
+//$foo = $container->get('PhpGrab\Base\PhpGrab');
+$foo = $container->get('PhpGrab');
+//$form = $foo->getform('http://www.supercarros.com/');
+$form = $foo->getForm('http://www.supercarros.com/');
 //, ['id' => 'advancesearch'];
 
 print_r($form);
