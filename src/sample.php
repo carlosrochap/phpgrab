@@ -22,3 +22,20 @@ $form = $foo->getForm('http://www.supercarros.com/');
 //, ['id' => 'advancesearch'];
 
 print_r($form);
+
+/// workflow
+
+/*
+ * $http = $container->get('PhpGrab\Http');
+ * $page = $http->get('http://url.com');
+ *
+ * $form = $page->getForm(['id' => 'sampleId']);
+ *
+ * $form['user'] = 'test';
+ * $form['pass'] = '1245';
+ *
+ * $page->post($form)->saveResult('index.html'); // $page->postForm();
+ *
+ * $page = $page->post($form);
+ * $page->save('yolo.html');
+ */

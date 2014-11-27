@@ -29,7 +29,11 @@ class PhpGrab {
     }
 
     public function getForm ($url) {
-        return $this->form->get($this->http->get($url), ['id' => 'advanceSearch']);
+        return Form::get($this->http->get($url), ['id' => 'advanceSearch']);
+    }
+
+    public function postForm (Form $form) {
+        //TODO
     }
 
 } 
