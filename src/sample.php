@@ -16,12 +16,12 @@ include_once('../vendor/autoload.php');
 $container = DI\containerbuilder::builddevcontainer();
 //new PhpGrab(new Http(), new Form());
 //$foo = $container->get('PhpGrab\Base\PhpGrab');
-$foo = $container->get('PhpGrab');
+$http = $container->get('Http');
 //$form = $foo->getform('http://www.supercarros.com/');
-$form = $foo->getForm('http://www.supercarros.com/');
+//$form = $foo->getForm('http://www.supercarros.com/');
 //, ['id' => 'advancesearch'];
-
-print_r($form);
+$page = $http->get('http://www.supercarros.com/');
+print_r($page);
 
 /// workflow
 

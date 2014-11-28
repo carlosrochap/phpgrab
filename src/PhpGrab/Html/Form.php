@@ -560,7 +560,7 @@ class Form
      * @param string               $referer    Optional referer
      * @return mixed Request's response body on success
      */
-    public function submit(Connection_Interface $connection, $referer=null, array $hdr=array())
+   /* public function submit(Connection_Interface $connection, $referer=null, array $hdr=array())
     {
         if (null === $referer) {
             $referer = $this->_ref_url;
@@ -591,7 +591,7 @@ class Form
             $args[] = $hdr;
             return call_user_func_array($callback, $args);
         }
-    }
+    }*/
 
     /**
      * @see Container::offsetUnset()

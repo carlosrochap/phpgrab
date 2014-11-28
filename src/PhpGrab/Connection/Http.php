@@ -270,7 +270,7 @@ class Http {
             //print "\n";
         }
 
-        return $this->result;
+        return $this;//$this->result;
     }
 
     public function get_error()
@@ -407,6 +407,32 @@ class Http {
         $this->assing_opt(CURLOPT_POST, true);
         $this->assing_opt(CURLOPT_POSTFIELDS, $data);
         return $this->get_result($url);
+    }
+
+    public function postForm (Form $form, $method='post') {
+
+        $callback = array($this, $method);
+        $args = array($form->get_action());
+
+        switch ($this->_method) {
+            case 'get':
+                $args[] = $this->to_string();
+                break;
+
+            case 'post':
+            case 'ajax':
+                $args[] = (self::CONTENT_TYPE_MULTIPART == $this->_content_type)
+                    ? $this->to_array()
+                    : $this->to_string();
+                $args[] = null;
+                break;
+
+            default:
+                $callback = $args = null;
+        }
+
+        return call_user_func_array($callback, $args);
+        
     }
 
     public function ajax($url, $referer=null, $post=null,
